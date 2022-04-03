@@ -130,8 +130,7 @@ export class Scheduler {
   }
 
   public removeSubscription(device: AwairDevice) {
-    let accountToRemove: AwairAccount;
-
+    let accountToRemove: AwairAccount = ({} as any) as AwairAccount;;
     this.accounts.forEach((account) => {
       const index = account.devices.indexOf(device);
       if (index !== -1) {
@@ -170,7 +169,7 @@ export class Scheduler {
   private async fetchAndSendData(accounts: AwairAccounts) {
     // Grab all the data from awair and save them in a structure
     accounts  .forEach((account) => {
-      const jwt = account.jwt;
+      const jwt = account.jwt ;
 
       account.devices.forEach((device) => {
         const deviceType = device.deviceType;

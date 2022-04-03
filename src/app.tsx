@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 
 import RouteHelper from './components/appUtils/RouteHelper';
@@ -13,24 +13,35 @@ interface HomePageProps {
   isReady: boolean
 }
 
+
 const App = (props: HomePageProps) => {
-  if (!props.isReady) {
-    return <div className='loading'>Loading...</div>;
-  }
-
-  if (authorization?.isAuthenticated() === false) {
-    authorization?.login();
-    return <><div className='loading'>Redirecting to Login</div></>;
-  }
-
   const onComplete = (response: Sensors) => {
     console.log(response);
   };
 
   useEffect(() => {
-    Scheduler.getInstance().loadPWSensorsList(onComplete);
-    Scheduler.getInstance().start();
-  }, []);
+    if(authorization?.isAuthenticated() === false){
+      authorization?.login();
+    }
+  },[props.isReady]);
+  
+
+  useEffect(() => {
+    if(authorization?.isAuthenticated() === true){
+      Scheduler.getInstance().loadPWSensorsList(onComplete);
+      Scheduler.getInstance().start();
+    }
+  }
+  ,[]);
+
+  if (!props.isReady) {
+    return <div className='loading'>Loading...</div>;
+  }
+
+ // if (authorization?.isAuthenticated() === false) {
+ //   authorization?.login();
+ //   return <><div className='loading'>Redirecting to Login</div></>;
+ // }
 
   return (
     <>

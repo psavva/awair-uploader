@@ -1,45 +1,46 @@
-# Awair-uploader
-This is a community based opensource tool that is capable of fetching data of Awair Element devices from Awair servers and send them to a custom endpoint.
-The idea behind this project is to send these data to PlanetWatch servers in order to be able to be still elibile for rewards.
+# Getting Started with Create React App
 
-## First Release
-I've finally finished a first, basic version of this tool. I wanted to very hurry up cause i know the community needs this kind of functionality.
-I'm goint to upload two builds of this tool at the first very moment:
-- one for windows (x64)
-- one for MacOs (M1) (I've tested on M1 but i'm not sure it will work only on M1, but also on Intel, just drop a comment if you can't run this on Intel)
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## DISCLAIMER AND WARNINGS
-This tool was built in very few days so it can be full of bugs. For the time being i've found one main issue while using this tool. Since the authentication is a tricky process, once you launch the application you have to force the reload when it got stucked on "Loading..." page using the "View" -> "Force Reload"
+## Available Scripts
 
-## How to use this tool
-1. Open the tool
-2. Log in with the PLANETWATCH CREDENTIALS (Read the disclaimer, if you got stucked, pls refresh with Force Reload (even several times))
-3. Open your Awair Home Application
-4. Click one of your sensors and press Awair+, Awair APIs Beta, Cloud API, Get API Token
-5. Once you have clicked the Get API Token you will be able to insert the AWAIR HOME Credentials. Then you will be able to grab the token (ex: eyJ0......)
-5. Once you got it insert it into the "Add sensor" section (into the search bar).
-6. Search
-7. Press "Add your token"
-8. Repeat from step 3 for EACH awair account you own
-9. Finish!
+In the project directory, you can run:
 
+### `npm start`
 
-## Installation
-Since the project is not yet approved by PlanetWatch Company, the software is basically only fetching data from Awair's servers. For the time being we discourage any usage of this project until PlanetWatch approves and shares the endpoints where to write our data.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-If you still want to install this tool, just run clone the repository and run the following commands:
-```sh
-npm install
-npm start
-```
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-If you want to create a standalone version of Awair-uploader, run the following commands:
-```sh
-npm run make
-```
+### `npm test`
 
-## Contributing
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-The project was developed on MacOS and the building section is only for MacOS. Feel free to contribute to the project by adding your distro building section (Windows/Linux) with a Pull Request. 
+### `npm run build`
 
-We will appreciate any help to improve of the code.
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).

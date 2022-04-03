@@ -8,7 +8,7 @@ TimeAgo.addLocale(en as LocaleData);
 const timeAgo = new TimeAgo('en-EN');
 
 const Status = () => {
-  const [data, setData] = useState<Statuses>();
+  const [data, setData] = useState<Statuses>({});
 
   const printData = (info: Statuses) => {
     setData(info);

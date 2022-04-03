@@ -4,7 +4,7 @@ import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import constants from './constants';
 import store from './store';
-import App from './app';
+import App from './App';
 import { AuthorizationProvider } from './utils/authorization';
 import { AxiosRequestInterceptorProvider } from './utils/axios';
 

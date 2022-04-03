@@ -40,11 +40,11 @@ class Authorization {
   isAuthenticated = () => this.keycloak?.authenticated === true;
 
   login = () => {
-    return this.keycloak!.login({ redirectUri: 'http://localhost:33333/keycloak-redirect' });
+    return this.keycloak!.login({ redirectUri: 'http://localhost:3000/keycloak-redirect' });
   };
 
   logout = () => {
-    this.keycloak?.logout({ redirectUri: 'http://localhost:33333/keycloak-redirect' });
+    this.keycloak?.logout({ redirectUri: 'http://localhost:3000/keycloak-redirect' });
   };
 
 }
@@ -61,11 +61,12 @@ export const authorization = Authorization.instance;
 const AuthProvider = (props: AuthorizationProviderProps) => {
   const { children, authorizationProps } = props;
   return (
+  
     <ReactKeycloakProvider
       authClient={authorization.init(authorizationProps)}
       initOptions={{
         checkLoginIframe: false,
-        redirectUri: 'http://localhost:33333/keycloak-redirect'
+        redirectUri: 'http://localhost:3000/keycloak-redirect'
       }}
       onEvent={async (event) => {
         if (event === 'onAuthSuccess') {

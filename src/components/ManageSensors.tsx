@@ -8,13 +8,13 @@ import './ManageSensors.css';
 const { Search } = Input;
 
 const ManageSensors = () => {
-  const [tempJwt, setTempJwt] = useState<string>();
+  const [tempJwt, setTempJwt] = useState<string>('');
   const [devices, setDevices] = useState<AwairDevice[]>([]);
 
   const [registeredAccounts, setRegisteredAccounts] = useState<AwairAccounts>([]);
 
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string>(undefined);
+  const [error, setError] = useState<string>();
 
   useEffect(() => {
     setRegisteredAccounts(Scheduler.getInstance().getAccounts());

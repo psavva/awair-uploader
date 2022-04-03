@@ -4,7 +4,7 @@ import { Sensors } from '../types/planetWatch/sensors';
 import './AvailableSensors.css';
 
 const AvailableSensors = () => {
-  const [sensors, setSensors] = useState<Sensors>(undefined);
+  const [sensors, setSensors] = useState<Sensors>();
 
   useEffect(() => {
     Scheduler.getInstance().loadPWSensorsList(() => { }).then((res) => {
